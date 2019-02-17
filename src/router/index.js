@@ -9,13 +9,23 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
+      path: '',
       component: Layout,
       children: [{
         path: 'helloworld',
-        component: () => import('@/components/HelloWorld'),
-        name: 'HelloWorld'
+        component: () => import('@/views/helloworld/index'),
+        name: 'HelloWorld',
+        meta: { title: 'HelloWorld', icon: 'chart' }
+      }]
+    },
+    {
+      path: '/carousel',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/carousel/index'),
+        name: 'Carousel',
+        meta: { title: 'Carousel', icon: 'chart' }
       }]
     }
   ]
