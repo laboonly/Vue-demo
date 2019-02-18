@@ -14,42 +14,40 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data () {
     return {
-     mark: 0,
-     len: 3,
-     mybanner: [
-       {
-         banner: require('@/assets/156a0c13fd369e473e7074c20ab1ee79b99d7aef.jpg')
-       },
-       {
-         banner: require('@/assets/20120611175238_aCNGz.jpeg')
-       },
-       {
-         banner: require('@/assets/20140214120558_2f4NN.jpeg')
-       },
-     ]
+      mark: 0,
+      len: 3,
+      mybanner: [
+        {
+          banner: require('@/assets/156a0c13fd369e473e7074c20ab1ee79b99d7aef.jpg')
+        },
+        {
+          banner: require('@/assets/20120611175238_aCNGz.jpeg')
+        },
+        {
+          banner: require('@/assets/20140214120558_2f4NN.jpeg')
+        }
+      ]
     }
   },
-  created() {
+  created () {
     this.play()
   },
   methods: {
-   change(i) {
-     this.mark = i
-   },
-   autoPlay() {
+    change (i) {
+      this.mark = i
+    },
+    autoPlay () {
       this.mark++
-      if (this.mark === this.len) { //len在data中定义了，为banner的个数
-          this.mark = 0
-          return
+      if (this.mark === this.len) { // len在data中定义了，为banner的个数
+        this.mark = 0
       }
     },
-    play() {
-       setInterval(this.autoPlay, 3000)
+    play () {
+      setInterval(this.autoPlay, 3000)
     }
   }
 }
@@ -77,8 +75,7 @@ export default {
       }
     }
   }
-  
-  
+
   .bullet {
     display: flex;
     justify-content: space-between;
@@ -102,10 +99,9 @@ export default {
       transition: all 1s ease-in-out;
   }
   .carousel-enter {
-    transform: translateX(100%)   
+    transform: translateX(100%)
   }
   .carousel-leave {
       transform: translateX(0)
   }
 </style>
-

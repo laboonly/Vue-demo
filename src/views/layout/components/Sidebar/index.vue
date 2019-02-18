@@ -8,11 +8,11 @@
 import SidebarItem from './SidebarItem'
 
 export default {
-    components: { SidebarItem },
-    computed: {
-        routes() {
-            return this.$router.options.routes
-        },
+  components: { SidebarItem },
+  computed: {
+    routes () {
+      return this.$router.options.routes
     }
+  }
 }
 </script>

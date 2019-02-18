@@ -27,6 +27,16 @@ export default new Router({
         name: 'Carousel',
         meta: { title: 'Carousel', icon: 'chart' }
       }]
+    },
+    {
+      path: '/icon-demo',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/icon-demo/index'),
+        name: 'icon-demo',
+        meta: { title: 'icon-demo', icon: 'chart' }
+      }]
     }
   ]
 })
