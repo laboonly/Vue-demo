@@ -47,6 +47,16 @@ export default new Router({
         name: 'Carousel-vue',
         meta: { title: 'Carousel-vue', icon: 'chart' }
       }]
+    },
+    {
+      path: '/canlendar',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/canlendar/index'),
+        name: 'canlendar',
+        meta: { title: 'canlendar', icon: 'chart' }
+      }]
     }
   ]
 })
