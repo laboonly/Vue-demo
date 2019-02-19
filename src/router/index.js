@@ -34,8 +34,8 @@ export default new Router({
       children: [{
         path: 'index',
         component: () => import('@/views/icon-demo/index'),
-        name: 'icon-demo',
-        meta: { title: 'icon-demo', icon: 'chart' }
+        name: 'Icon-demo',
+        meta: { title: 'Icon-demo', icon: 'chart' }
       }]
     },
     {
@@ -54,8 +54,8 @@ export default new Router({
       children: [{
         path: 'index',
         component: () => import('@/views/canlendar/index'),
-        name: 'canlendar',
-        meta: { title: 'canlendar', icon: 'chart' }
+        name: 'Canlendar',
+        meta: { title: 'Canlendar', icon: 'chart' }
       }]
     }
   ]
