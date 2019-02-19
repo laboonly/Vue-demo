@@ -12,10 +12,10 @@ export default new Router({
       path: '',
       component: Layout,
       children: [{
-        path: 'helloworld',
-        component: () => import('@/views/helloworld/index'),
-        name: 'HelloWorld',
-        meta: { title: 'HelloWorld', icon: 'chart' }
+        path: 'resume',
+        component: () => import('@/views/resume/index'),
+        name: 'Resume',
+        meta: { title: 'Resume', icon: 'chart' }
       }]
     },
     {
