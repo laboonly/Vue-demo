@@ -15,14 +15,12 @@
                         <th>五</th>
                         <th>六</th>
                     </tr>
-                    <tr v-for="item in number" :key="item">
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
-                        <td> {{item}} </td>
+                    <tr v-for="(items, indexs) in total_calendar_list" :key="indexs">
+                        <template  v-for='(item, index) in items'>
+
+                                <td :key="index"> {{ item.content }} </td>
+
+                        </template>
                     </tr>
                 </tbody>
             </table>
@@ -34,7 +32,70 @@
 export default {
   data () {
     return {
-      number: 7
+      year: new Date().getFullYear(),
+      month: new Date().getMonth() + 1,
+      day: new Date().getDay(),
+      total_calendar_list: [] // 将要被熏染的列表
+    }
+  },
+  created () {
+    this.C_calender(this.year, this.month)
+  },
+  computed: {
+    nowYear () {
+      return new Date().getFullYear()
+    },
+    nowMonth () {
+      return new Date().getMonth()
+    },
+    nowDay () {
+      return new Date().getDay()
+    }
+  },
+  methods: {
+    getWeekday (year, month, day) { // 获取星期几
+      return new Date(year / month / day).getDay()
+    },
+    getMonthDays (year, month) { // 获取一个月有几天
+      return new Date(year, month, 0).getDate()
+    },
+    C_calender (year, month) {
+      let daysInMonth = this.getMonthDays(year, month)
+      let targetDay = this.getWeekday(year, month, 1)
+      let preNum = targetDay + 1 //
+      if (targetDay > 0) {
+        for (let i = 0; i < preNum; i++) {
+          let obj = {
+            type: 'pre',
+            content: ''
+          }
+          this.total_calendar_list.push(obj)
+        }
+      }
+      for (let i = 1; i <= daysInMonth; i++) {
+        let obj = {
+          type: 'pre',
+          content: i
+        }
+        this.total_calendar_list.push(obj)
+      }
+      let nextNum = 6 - this.getWeekday(year, month + 1, 1)
+      console.log(nextNum)
+      for (let i = 0; i < nextNum; i++) {
+        let obj = {
+          type: 'pre',
+          content: ''
+        }
+        this.total_calendar_list.push(obj)
+      }
+      console.log(this.total_calendar_list)
+      let res = []
+      for (let i = 0; i < 6; i++) {
+        let temp = this.total_calendar_list.slice(i * 7, i * 7 + 7)
+        res.push(temp)
+      }
+      this.total_calendar_list = res
+      console.log(this.total_calendar_list)
     }
   }
 }
