@@ -17,9 +17,7 @@
                     </tr>
                     <tr v-for="(items, indexs) in total_calendar_list" :key="indexs">
                         <template  v-for='(item, index) in items'>
-
                                 <td :key="index"> {{ item.content }} </td>
-
                         </template>
                     </tr>
                 </tbody>
