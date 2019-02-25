@@ -57,6 +57,16 @@ export default new Router({
         name: 'Canlendar',
         meta: { title: 'Canlendar', icon: 'chart' }
       }]
+    },
+    {
+      path: '/date-picker',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/date-picker/index'),
+        name: 'Date Picker',
+        meta: { title: 'Date Picker', icon: 'chart' }
+      }]
     }
   ]
 })
