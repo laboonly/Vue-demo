@@ -2,7 +2,11 @@
     <div class="task-canlendar">
         <div class="container">
             <div class="">
-
+                <div class="date-picker-content">
+                    <div class="date-picker-input-content">
+                        <input type="text" class="date-picker-input" placeholder="日期选择" v-model="date">
+                    </div>
+                </div>
             </div>
             <table border="1"   >
                 <tbody>
@@ -33,7 +37,8 @@ export default {
       year: new Date().getFullYear(),
       month: new Date().getMonth() + 1,
       day: new Date().getDay(),
-      total_calendar_list: [] // 将要被熏染的列表
+      total_calendar_list: [],
+      date: null // 将要被熏染的列表
     }
   },
   created () {
@@ -121,6 +126,23 @@ export default {
                     background-color: #ffffff;
                 }
             }
+        }
+    }
+    .date-picker-content {
+        .date-picker-input-content {
+        .date-picker-input {
+            border: 1px solid #dcdfe6;
+            color: #606266;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            width: 200px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid #dcdfe6;
+            padding: 0 15px;
+            cursor: pointer;
+        }
         }
     }
 </style>
