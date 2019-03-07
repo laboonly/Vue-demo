@@ -67,6 +67,16 @@ export default new Router({
         name: 'Date Picker',
         meta: { title: 'Date Picker', icon: 'chart' }
       }]
+    },
+    {
+      path: '/cssadapt',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/cssadapt/index'),
+        name: 'css Adapt',
+        meta: { title: 'css Adapt', icon: 'chart' }
+      }]
     }
   ]
 })

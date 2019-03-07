@@ -42,7 +42,7 @@ export default {
     return {
       year: new Date().getFullYear(),
       month: new Date().getMonth() + 1,
-      day: new Date().getDay(),
+      day: new Date().getDate(),
       total_calendar_list: []
     }
   },
@@ -54,10 +54,10 @@ export default {
       return new Date().getFullYear()
     },
     nowMonth () {
-      return new Date().getMonth()
+      return new Date().getMonth() + 1
     },
     nowDay () {
-      return new Date().getDay()
+      return new Date().getDate()
     },
     date () {
       return this.year + '-' + this.month + '-' + this.day
@@ -88,7 +88,8 @@ export default {
       }
       for (let i = 1; i <= daysInMonth; i++) {
         let obj
-        if (i === this.day && year === this.year && month === this.month) {
+        console.log(this.year, this.month, year, month)
+        if (i === this.day && year === this.nowYear && month === this.nowMonth) {
           obj = {
             type: true,
             content: i
