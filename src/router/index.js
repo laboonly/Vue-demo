@@ -67,6 +67,18 @@ export default new Router({
         name: 'Date Picker',
         meta: { title: 'Date Picker', icon: 'chart' }
       }]
+    },
+    {
+      path: '/imgresponse',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/imgresponse/index'),
+          name: 'ImgResponse',
+          meta: { title: 'ImgResponse', icon: 'chart' }
+        }
+      ]
     }
   ]
 })
