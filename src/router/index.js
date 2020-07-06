@@ -79,6 +79,14 @@ export default new Router({
           meta: { title: 'ImgResponse', icon: 'chart' }
         }
       ]
+      path: '/cssadapt',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/cssadapt/index'),
+        name: 'css Adapt',
+        meta: { title: 'css Adapt', icon: 'chart' }
+      }]
     }
   ]
 })
