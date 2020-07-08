@@ -69,6 +69,16 @@ export default new Router({
       }]
     },
     {
+      path: '/imgresponse',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/imgresponse/index'),
+          name: 'ImgResponse',
+          meta: { title: 'ImgResponse', icon: 'chart' }
+        }
+      ]
       path: '/cssadapt',
       component: Layout,
       children: [{
