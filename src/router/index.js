@@ -79,6 +79,8 @@ export default new Router({
           meta: { title: 'ImgResponse', icon: 'chart' }
         }
       ]
+    },
+    {
       path: '/cssadapt',
       component: Layout,
       children: [{
