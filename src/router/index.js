@@ -89,6 +89,16 @@ export default new Router({
         name: 'css Adapt',
         meta: { title: 'css Adapt', icon: 'chart' }
       }]
+    },
+    {
+      path: '/masonry',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/masonry/index'),
+        name: 'Masonry',
+        meta: { title: 'Masonry', icon: 'chart' }
+      }]
     }
   ]
 })
