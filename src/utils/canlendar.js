@@ -12,4 +12,6 @@ export const getWeekday = function (year, month, day) {
 export const getweeksInMonth = function (year, month) {
   let days = this.getMonthDays(year, month)
   let FDW = this.getWeekday(year, month, 1)
+
+  return { days, FDW }
 }

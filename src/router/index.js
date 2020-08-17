@@ -15,7 +15,7 @@ export default new Router({
         path: 'resume',
         component: () => import('@/views/resume/index'),
         name: 'Resume',
-        meta: { title: 'Resume', icon: 'chart' }
+        meta: { title: '简历Resume', icon: 'chart' }
       }]
     },
     {
@@ -25,7 +25,7 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/carousel/index'),
         name: 'Carousel',
-        meta: { title: 'Carousel', icon: 'chart' }
+        meta: { title: '轮播Carousel', icon: 'chart' }
       }]
     },
     {
@@ -35,7 +35,7 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/icon-demo/index'),
         name: 'Icon-demo',
-        meta: { title: 'Icon-demo', icon: 'chart' }
+        meta: { title: '图标Icon-demo', icon: 'chart' }
       }]
     },
     {
@@ -45,7 +45,7 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/carousel-vue/index'),
         name: 'Carousel-vue',
-        meta: { title: 'Carousel-vue', icon: 'chart' }
+        meta: { title: '轮播Carousel-vue', icon: 'chart' }
       }]
     },
     {
@@ -55,7 +55,7 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/canlendar/index'),
         name: 'Canlendar',
-        meta: { title: 'Canlendar', icon: 'chart' }
+        meta: { title: '日历Canlendar', icon: 'chart' }
       }]
     },
     {
@@ -65,7 +65,7 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/date-picker/index'),
         name: 'Date Picker',
-        meta: { title: 'Date Picker', icon: 'chart' }
+        meta: { title: '时间选择Date Picker', icon: 'chart' }
       }]
     },
     {
@@ -76,7 +76,7 @@ export default new Router({
           path: 'index',
           component: () => import('@/views/imgresponse/index'),
           name: 'ImgResponse',
-          meta: { title: 'ImgResponse', icon: 'chart' }
+          meta: { title: '图片自适应ImgResponse', icon: 'chart' }
         }
       ]
     },
@@ -97,7 +97,17 @@ export default new Router({
         path: 'index',
         component: () => import('@/views/masonry/index'),
         name: 'Masonry',
-        meta: { title: 'Masonry', icon: 'chart' }
+        meta: { title: '瀑布流Masonry', icon: 'chart' }
+      }]
+    },
+    {
+      path: '/drag',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/drag/index'),
+        name: 'Drag',
+        meta: { title: '封装的Demo', icon: 'chart' }
       }]
     }
   ]
