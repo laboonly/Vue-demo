@@ -109,6 +109,16 @@ export default new Router({
         name: 'Drag',
         meta: { title: '封装的Demo', icon: 'chart' }
       }]
+    },
+    {
+      path: '/grail',
+      component: Layout,
+      children: [{
+        path: 'index',
+        component: () => import('@/views/grail/index'),
+        name: 'Grail',
+        meta: { title: '圣杯布局和双飞翼布局', icon: 'chart' }
+      }]
     }
   ]
 })
