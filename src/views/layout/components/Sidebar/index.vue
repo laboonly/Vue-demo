@@ -1,6 +1,6 @@
 <template>
     <div>
-         <sidebar-item :routes="permission_routes"></sidebar-item>
+         <sidebar-item :routes="permission_routers"></sidebar-item>
     </div>
 </template>
 
@@ -12,8 +12,11 @@ export default {
   components: { SidebarItem },
   computed: {
     ...mapGetters([
-      'permission_routes'
+      'permission_routers'
     ])
+  },
+  mounted () {
+    console.log(this.permission_routers)
   }
 }
 </script>

@@ -8,14 +8,6 @@ Vue.use(Router)
 
 export const constantRoutes = [
   {
-    path: '/404',
-    component: () => import('@/views/error-page/404'),
-    hidden: true
-  }
-]
-
-export const asyncRoutes = [
-  {
     path: '',
     component: Layout,
     children: [{
@@ -24,7 +16,15 @@ export const asyncRoutes = [
       name: 'Resume',
       meta: { title: '简历Resume', icon: 'chart' }
     }]
-  },
+  }
+  // {
+  //   path: '/404',
+  //   component: () => import('@/views/error-page/404'),
+  //   hidden: true
+  // }
+]
+
+export const asyncRoutes = [
   {
     path: '/carousel',
     component: Layout,
@@ -32,7 +32,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/carousel/index'),
       name: 'Carousel',
-      meta: { title: '轮播Carousel', icon: 'chart' }
+      meta: { title: '轮播Carousel', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -42,7 +42,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/icon-demo/index'),
       name: 'Icon-demo',
-      meta: { title: '图标Icon-demo', icon: 'chart' }
+      meta: { title: '图标Icon-demo', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -52,7 +52,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/carousel-vue/index'),
       name: 'Carousel-vue',
-      meta: { title: '轮播Carousel-vue', icon: 'chart' }
+      meta: { title: '轮播Carousel-vue', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -62,7 +62,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/canlendar/index'),
       name: 'Canlendar',
-      meta: { title: '日历Canlendar', icon: 'chart' }
+      meta: { title: '日历Canlendar', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -72,7 +72,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/date-picker/index'),
       name: 'Date Picker',
-      meta: { title: '时间选择Date Picker', icon: 'chart' }
+      meta: { title: '时间选择Date Picker', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -83,7 +83,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/imgresponse/index'),
         name: 'ImgResponse',
-        meta: { title: '图片自适应ImgResponse', icon: 'chart' }
+        meta: { title: '图片自适应ImgResponse', icon: 'chart', roles: ['visit', 'editor'] }
       }
     ]
   },
@@ -94,7 +94,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/cssadapt/index'),
       name: 'css Adapt',
-      meta: { title: 'css Adapt', icon: 'chart' }
+      meta: { title: 'css Adapt', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -104,7 +104,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/masonry/index'),
       name: 'Masonry',
-      meta: { title: '瀑布流Masonry', icon: 'chart' }
+      meta: { title: '瀑布流Masonry', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -114,7 +114,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/drag/index'),
       name: 'Drag',
-      meta: { title: '封装的Demo', icon: 'chart' }
+      meta: { title: '封装的Demo', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   },
   {
@@ -124,14 +124,14 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/grail/index'),
       name: 'Grail',
-      meta: { title: '圣杯布局和双飞翼布局', icon: 'chart' }
+      meta: { title: '圣杯布局和双飞翼布局', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   }
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  // scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
 

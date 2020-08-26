@@ -17,6 +17,9 @@ export default {
     routes: {
       type: Array
     }
+  },
+  mounted () {
+    console.log(this.routes)
   }
 }
 
