@@ -32,7 +32,7 @@ export const asyncRoutes = [
       path: 'index',
       component: () => import('@/views/carousel/index'),
       name: 'Carousel',
-      meta: { title: '轮播Carousel', icon: 'chart', roles: ['visit', 'editor'] }
+      meta: { title: '轮播Carousel', icon: 'chart', roles: ['visit1', 'editor1'] }
     }]
   },
   {
