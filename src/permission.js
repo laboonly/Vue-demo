@@ -2,16 +2,22 @@ import router from './router'
 import store from './store'
 
 router.beforeEach(async (to, from, next) => {
-  try {
-    const { roles } = {'roles': ['editor'], 'introduction': 'I am a super administrator', 'avatar': 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif', 'name': 'Super Admin'}
-
-    // generate accessible routes map based on roles
-    const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
-
-    router.addRoutes(accessRoutes)
-
+  const hasRoles = store.getters.roles && store.getters.roles.length > 0
+  console.log(hasRoles)
+  if (hasRoles) {
     next()
-  } catch (error) {
-    console.log(error)
+  } else {
+    try {
+      const { roles } = await store.dispatch('user/getInfo')
+
+      // generate accessible routes map based on roles
+      const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
+
+      router.addRoutes(accessRoutes)
+      console.log('addroutes')
+      next({ ...to, replace: true })
+    } catch (error) {
+      console.log(error)
+    }
   }
 })

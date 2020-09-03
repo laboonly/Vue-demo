@@ -127,6 +127,8 @@ export const asyncRoutes = [
       meta: { title: '圣杯布局和双飞翼布局', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   }
+  // 404 page must be placed at the end !!!
+  // { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
@@ -135,6 +137,10 @@ const createRouter = () => new Router({
   routes: constantRoutes
 })
 
+export function resetRouter () {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
 const router = createRouter()
 
 export default router

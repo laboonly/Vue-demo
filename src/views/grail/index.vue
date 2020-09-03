@@ -1,12 +1,18 @@
 <template>
   <div class="">
-      <h1>圣杯布局</h1>
+      <h1>1. 圣杯布局</h1>
       <div class="grail-content">
           <div class="left"></div>
           <div class="center">
               <p>A paragraph of filler text. La la la de dah de dah de dah de la.</p>
           </div>
           <div class="right"></div>
+      </div>
+      <h1>2. 半透明边框</h1>
+      <div class="transborder">
+          <div class="box">
+
+          </div>
       </div>
   </div>
 </template>
@@ -44,6 +50,18 @@ export default {
             height: 500px;
             background: #FFFFFF;
             box-sizing: border-box;
+        }
+    }
+    .transborder {
+        width: 100%;
+        height: 300px;
+        background: #b4a078;
+
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: white;
         }
     }
 </style>
