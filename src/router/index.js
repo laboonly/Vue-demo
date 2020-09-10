@@ -14,7 +14,7 @@ export const constantRoutes = [
       path: 'resume',
       component: () => import('@/views/resume/index'),
       name: 'Resume',
-      meta: { title: '简历Resume', icon: 'chart' }
+      meta: { title: 'Resume', icon: 'chart' }
     }]
   }
   // {
@@ -125,6 +125,16 @@ export const asyncRoutes = [
       component: () => import('@/views/grail/index'),
       name: 'Grail',
       meta: { title: '圣杯布局和双飞翼布局', icon: 'chart', roles: ['visit', 'editor'] }
+    }]
+  },
+  {
+    path: '/scroll',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/Scroll/index'),
+      name: 'Scroll',
+      meta: { title: '无限加载', icon: 'chart', roles: ['visit', 'editor'] }
     }]
   }
   // 404 page must be placed at the end !!!

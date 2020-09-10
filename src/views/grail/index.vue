@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="css-demo">
       <h1>1. 圣杯布局</h1>
       <div class="grail-content">
           <div class="left"></div>
@@ -11,8 +11,12 @@
       <h1>2. 半透明边框</h1>
       <div class="transborder">
           <div class="box">
-
           </div>
+      </div>
+      <h1>3. 1px边线</h1>
+      <div class="onepx">
+          <div class="box"></div>
+          <div class="box2"></div>
       </div>
   </div>
 </template>
@@ -24,6 +28,9 @@ export default {
 </script>
 
 <style lang="less" scped>
+    .css-demo {
+        padding-bottom: 100px;
+    }
     .grail-content {
         width: 100%;
         overflow: hidden;
@@ -62,6 +69,32 @@ export default {
             height: 200px;
             margin: 20px auto;
             background-color: white;
+        }
+    }
+    .onepx {
+        .box {
+            height: 10px;
+            background-color: #FFFFFF;
+            box-shadow: 0  -1px 1px -1px #000000; //上边线
+            width: 100%;
+        }
+        .box2 {
+            width: 100%;
+            height: 10px;
+            margin-top: 50px;
+            background-color: #FFFFFF;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                background-color: #000000;
+                display: block;
+                width: 100%;
+                height: 1px; /*no*/
+                transform: scale(1, 0.5);
+                top: 0;
+                left: 0;
+            }
         }
     }
 </style>

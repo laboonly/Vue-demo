@@ -2,12 +2,24 @@
   <div>
     <svg-icon icon-class="back"></svg-icon>
     <svg-icon icon-class="right"></svg-icon>
+    <div>
+       <count-up></count-up>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import CountUp from '@/components/CountTo'
 
+export default {
+  components: {
+    CountUp
+  },
+  data () {
+    return {
+
+    }
+  }
 }
 </script>
 
