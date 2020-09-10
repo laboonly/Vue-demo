@@ -2,35 +2,50 @@
   <div>
     <svg-icon icon-class="back"></svg-icon>
     <svg-icon icon-class="right"></svg-icon>
-    <div>
-       <count-up></count-up>
+    <div class="event">
+        <h1>事件代理</h1>
+        <ul @click="changeColor">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
   </div>
 </template>
 
 <script>
-import CountUp from '@/components/CountTo'
 
 export default {
-  components: {
-    CountUp
-  },
+
   data () {
     return {
 
+    }
+  },
+  methods: {
+    changeColor (event) {
+      event.target.style.background = 'red'
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-    // .icon {
-    //    width: 1em; height: 1em;
-    //    vertical-align: -0.15em;
-    //    fill: currentColor;
-    //    overflow: hidden;
-    // }
     .svg-icon {
       color: #3190e8;
+    }
+    .event {
+      ul {
+        li {
+          width: 200px;
+          height: 20px;
+          background-color: chocolate;
+          list-style: none;
+          margin-top: 20px;
+        }
+      }
     }
 </style>

@@ -36,6 +36,26 @@ export const asyncRoutes = [
     }]
   },
   {
+    path: '/permission',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/permission/index'),
+      name: 'Permission',
+      meta: { title: '权限验证', icon: 'chart', roles: ['visit1', 'editor1'] }
+    }]
+  },
+  {
+    path: '/game',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/underTheFloors/index'),
+      name: 'Game',
+      meta: { title: 'Game', icon: 'chart', roles: ['visit1', 'editor1'] }
+    }]
+  },
+  {
     path: '/icon-demo',
     component: Layout,
     children: [{
