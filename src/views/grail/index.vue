@@ -1,35 +1,72 @@
 <template>
   <div class="css-demo">
-      <h1>1. 圣杯布局</h1>
-      <div class="grail-content">
-          <div class="left"></div>
-          <div class="center">
-              <p>A paragraph of filler text. La la la de dah de dah de dah de la.</p>
-          </div>
-          <div class="right"></div>
+      <div class="grail">
+        <h1>1. 圣杯布局</h1>
+        <input ref="range" type="range" value="100">
+        <div class="grail-content" :style="{ width }">
+            <div class="left"></div>
+            <div class="center">
+                <p>A paragraph of filler text. La la la de dah de dah de dah de la.</p>
+            </div>
+            <div class="right"></div>
+        </div>
       </div>
-      <h1>2. 半透明边框</h1>
-      <div class="transborder">
-          <div class="box">
-          </div>
+      <div class="content2">
+        <h1>2. 半透明边框</h1>
+        <div class="transborder">
+            <input id="pb" type="checkbox" checked/>
+            <label for="pb">padding-box(默认)</label>
+            <div class="box">
+            </div>
+        </div>
       </div>
-      <h1>3. 1px边线</h1>
-      <div class="onepx">
-          <div class="box"></div>
-          <div class="box2"></div>
+      <div class="content3">
+        <h1>3. 1px边线</h1>
+        <div class="onepx">
+            <div class="box"></div>
+            <div class="box2"></div>
+        </div>
+      </div>
+      <div class="content4">
+        <h1>4. 条纹背景</h1>
+        <div class="progress-outer">
+            <div class="progress-enter">
+                <div class="progress-bg"></div>
+            </div>
+        </div>
+        <h1>5. 不规则卡片</h1>
+        <div class="coupon-card">
+
+        </div>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      width: '100%'
+    }
+  },
+  mounted () {
+    this.$refs.range.oninput = ({ target: { value } }) => {
+      this.width = `${60 + value * 0.4}%`
+    }
+  }
 }
 </script>
 
 <style lang="less" scped>
     .css-demo {
-        padding-bottom: 100px;
+        padding: 100px 50px;
+    }
+    .grail {
+        /* input range */
+        input[type="range"] {
+            width: 100%;
+            cursor: ew-resize;
+        }
     }
     .grail-content {
         width: 100%;
@@ -39,14 +76,14 @@ export default {
             width: 119px;
             left: 0;
             margin-right: -119px;
-            background-color: hotpink;
+
         }
         .right {
             position: relative;
             width: 119px;
             right: 0;
             margin-left: -119px;
-            background-color: hotpink;
+
         }
         .center {
             width: 100%;
@@ -55,7 +92,7 @@ export default {
         div {
             float: left;
             height: 500px;
-            background: #FFFFFF;
+            background: #b4a078;
             box-sizing: border-box;
         }
     }
@@ -63,12 +100,19 @@ export default {
         width: 100%;
         height: 300px;
         background: #b4a078;
-
+        padding: 20px 0;
         .box {
             width: 300px;
             height: 200px;
             margin: 20px auto;
             background-color: white;
+            border: 10px solid hsla(0, 0%, 100%, .5);
+        }
+         label{
+            color: #f4f0ea;
+        }
+        input[id="pb"]:checked ~ .box{
+            background-clip: padding-box;
         }
     }
     .onepx {
@@ -95,6 +139,40 @@ export default {
                 top: 0;
                 left: 0;
             }
+        }
+    }
+    .content4 {
+        width: 100%;
+        padding: 80px 0px;
+
+        .progress-outer {
+            width: 60%; height: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress-enter {
+            height: inherit;
+            background: rgba(180, 160, 120, .2);
+        }
+        .progress-bg {
+            width: 60%;
+            height: inherit;
+            border-radius: 6px;
+            background: repeating-linear-gradient(-45deg, #D9CFBB  25%, #C3B393 0, #C3B393 50%,
+                    #D9CFBB 0, #D9CFBB 75%, #C3B393 0);
+            background-size: 16px 16px;
+            animation: panoramic 20s linear infinite;
+        }
+        @keyframes panoramic{
+            to {
+                background-position: 200% 0;
+            }
+        }
+        .coupon-card {
+            width: 200px;
+            height: 120px;
+            background-image: radial-gradient(circle at 100px -8px, transparent 20px, #b4a078 21px);
         }
     }
 </style>

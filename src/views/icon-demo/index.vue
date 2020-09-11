@@ -13,13 +13,16 @@
             <li></li>
         </ul>
     </div>
+    <ElButton>开始</ElButton>
   </div>
 </template>
 
 <script>
-
+import ElButton from '@/packages/button/index.js'
 export default {
-
+  components: {
+    ElButton
+  },
   data () {
     return {
 
@@ -27,7 +30,9 @@ export default {
   },
   methods: {
     changeColor (event) {
-      event.target.style.background = 'red'
+      if (event.target.nodeName.toLowerCase() == 'li') {
+        event.target.style.background = 'red'
+      }
     }
   }
 }
