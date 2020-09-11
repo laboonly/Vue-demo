@@ -28,6 +28,7 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
   .menu-wrapper {
     padding-top: 50px;
+
     a {
       text-decoration: none;
       // &:hover {

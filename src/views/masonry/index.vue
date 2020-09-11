@@ -2,37 +2,37 @@
     <div class="masonry">
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here1</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here2</h2>
             <p>We offer live interactive 1-to-1 </p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here3</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here4</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here5</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here6</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
         <div class="item">
             <img :src="require('@/assets/20140214120558_2f4NN.jpeg')" >
-            <h2>title Goes here</h2>
+            <h2>title Goes here7</h2>
             <p>We offer live interactive 1-to-1 and group online and live streaming class packages for children aged 4 to 15 regardless of where they are located. Children will learn Chinese, English, Coding and STEM topics online from qualified tutors from the United States, United Kingdom and China. Our unique learning approach in a social setting is loved by children and parents alike!</p>
         </div>
     </div>

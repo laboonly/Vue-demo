@@ -43,7 +43,7 @@ export default {
         bottom: 0;
         left: 0;
         z-index: 1001;
-        overflow: hidden;
+        overflow-y: scroll;
         background-color: rgb(48, 65, 86);
         a {
             display: inline-block;

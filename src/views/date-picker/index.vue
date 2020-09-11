@@ -3,6 +3,10 @@
       <div class="date-picker-input-content">
         <input type="text" class="date-picker-input" placeholder="日期选择" v-model="date">
       </div>
+      <h1>图表</h1>
+      <div class="chart-content">
+
+      </div>
   </div>
 </template>
 

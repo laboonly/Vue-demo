@@ -39,6 +39,28 @@
 
         </div>
       </div>
+      <div class="content5">
+          <h1>6. 类订单布局</h1>
+          <section >
+            <span class="left">
+                <div
+                v-for="ele in elements"
+                @click="handleClick"
+                class="item" :key="ele">
+                {{symbol}}
+                </div>
+            </span>
+            <span class="center">Vertical centering<br>Vertical centering Vertical centering</span>
+            <span class="right">Vertical centering</span>
+          </section>
+      </div>
+      <div class="content6">
+          <h1>7. 浮动定位，跟绝对定位</h1>
+          <section>
+              <div class="floatbox"></div>
+              <div class="abox"></div>
+          </section>
+      </div>
   </div>
 </template>
 
@@ -46,12 +68,25 @@
 export default {
   data () {
     return {
-      width: '100%'
+      width: '100%',
+      elements: Array(2).fill(1),
+      symbol: '➕'
     }
   },
   mounted () {
     this.$refs.range.oninput = ({ target: { value } }) => {
       this.width = `${60 + value * 0.4}%`
+    }
+  },
+  methods: {
+    handleClick () {
+      this.elements.length == 2 ? (_ => {
+        this.elements.push(1)
+        this.symbol = '➖'
+      })() : (_ => {
+        this.elements.pop()
+        this.symbol = '➕'
+      })()
     }
   }
 }
@@ -63,6 +98,7 @@ export default {
     }
     .grail {
         /* input range */
+         padding: 39px 29px;
         input[type="range"] {
             width: 100%;
             cursor: ew-resize;
@@ -70,31 +106,40 @@ export default {
     }
     .grail-content {
         width: 100%;
-        overflow: hidden;
+        padding: 0 129px;
+        box-sizing: border-box;
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div {
+            float: left;
+            height: 229px;
+            padding: 29px 12px;
+            color: white;
+            background: #b4a078;
+            box-sizing: border-box;
+        }
         .left {
             position: relative;
             width: 119px;
-            left: 0;
-            margin-right: -119px;
+            left: -129px;
+            margin-right: -100%;
 
         }
         .right {
             position: relative;
             width: 119px;
-            right: 0;
             margin-left: -119px;
-
+            left: 129px;
         }
         .center {
             width: 100%;
-            padding: 0 119px;
+            text-align: justify;
+            hyphens: auto;
         }
-        div {
-            float: left;
-            height: 500px;
-            background: #b4a078;
-            box-sizing: border-box;
-        }
+
     }
     .transborder {
         width: 100%;
@@ -173,6 +218,91 @@ export default {
             width: 200px;
             height: 120px;
             background-image: radial-gradient(circle at 100px -8px, transparent 20px, #b4a078 21px);
+        }
+    }
+    .content5 {
+        width: 100%;
+        padding: 39px 29px;
+        font-size: 12px;
+        box-sizing: border-box;
+        section {
+            width: 100%;
+            box-shadow: 0 0 0 1px #eee;
+            overflow: hidden;
+            span {
+                width: 20%;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: -3px;
+                padding-left: 12px;
+                .item {
+                    width: 100%;
+                    height: 85px;
+                    text-align: center;
+                    line-height: 85px;
+                    background: rgba(180,160,120,.1);
+                    position: relative;
+                    &:not(:first-child) {
+                        margin-top: 24px;
+                    }
+                    &:not(:first-child)::before {
+                        content: '';
+                        position: absolute;
+                        top: -12px; right: -12px; left: -12px;
+                        border-top: 1px solid #eee;
+                    }
+                }
+            }
+            .left {
+                width: 45%;
+                margin-left: 0;
+                padding: 12px;
+            }
+            .center {
+                width: 35%;
+                border: 1px solid #eee;
+                padding-top: 999px;       /* h */
+                padding-bottom: 999px;    /* a */
+                margin-top: -999px;       /* c */
+                margin-bottom: -999px;    /* k */
+                position: relative;
+            }
+            &::after {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
+
+    }
+    .content6 {
+        width: 100%;
+        padding: 39px 29px;
+        font-size: 12px;
+        box-sizing: border-box;
+        section {
+            padding: 200px 200px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            position: relative;
+        }
+        .floatbox {
+            float: left;
+            // position: relative;
+            left: -100px;
+            // margin-left: -100px;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .abox {
+            position: absolute;
+            // left: 200px;
+            margin-left: 100px;
+            width: 200px;
+            height: 200px;
+            background: #b4a078;
         }
     }
 </style>
