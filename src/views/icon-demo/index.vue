@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     changeColor (event) {
-      if (event.target.nodeName.toLowerCase() == 'li') {
+      if (event.target.nodeName.toLowerCase() === 'li') {
         event.target.style.background = 'red'
       }
     }

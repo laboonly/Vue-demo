@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     handleClick () {
-      this.elements.length == 2 ? (_ => {
+      this.elements.length === 2 ? (_ => {
         this.elements.push(1)
         this.symbol = '➖'
       })() : (_ => {

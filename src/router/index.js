@@ -152,7 +152,7 @@ export const asyncRoutes = [
     component: Layout,
     children: [{
       path: 'index',
-      component: () => import('@/views/Scroll/index'),
+      component: () => import('@/views/scroll/index'),
       name: 'Scroll',
       meta: { title: '无限加载', icon: 'chart', roles: ['visit', 'editor'] }
     }]
