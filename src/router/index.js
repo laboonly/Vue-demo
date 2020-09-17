@@ -108,6 +108,19 @@ export const asyncRoutes = [
     ]
   },
   {
+    path: '/table',
+    component: Layout,
+    redirect: '/table/drag-table',
+    children: [
+      {
+        path: 'drag-table',
+        component: () => import('@/views/table/drag-table'),
+        name: 'table',
+        meta: { title: '拖拽表格', icon: 'chart', roles: ['visit', 'editor'] }
+      }
+    ]
+  },
+  {
     path: '/cssadapt',
     component: Layout,
     children: [{

@@ -6,3 +6,10 @@ export function getInfo () {
     method: 'get'
   })
 }
+
+export function getList () {
+  return request({
+    url: '/getList',
+    method: 'get'
+  })
+}
