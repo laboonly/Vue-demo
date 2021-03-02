@@ -36,6 +36,16 @@ export const asyncRoutes = [
     }]
   },
   {
+    path: '/ui-demo',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/ui-demo/index'),
+      name: 'UI-Demo',
+      meta: { title: 'UI-Demo', icon: 'chart', roles: ['visit1', 'editor1'] }
+    }]
+  },
+  {
     path: '/permission',
     component: Layout,
     children: [{
