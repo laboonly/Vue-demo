@@ -46,6 +46,16 @@ export const asyncRoutes = [
     }]
   },
   {
+    path: '/map-demo',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/map-demo/index'),
+      name: 'Map-Demo',
+      meta: { title: 'Map-Demo', icon: 'chart', roles: ['visit1', 'editor1'] }
+    }]
+  },
+  {
     path: '/permission',
     component: Layout,
     children: [{

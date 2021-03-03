@@ -7,11 +7,15 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import HcttopUI from 'hcttop-eleui'
+// import 'hcttop-eleui/lib/hcttop-eleui.css'
+
 import '@/icons'
 import './permission'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(HcttopUI)
 /* eslint-disable no-new */
 new Vue({
   router,
